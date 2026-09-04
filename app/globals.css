@@ -1,26 +1,155 @@
 @import "tailwindcss";
 
+/* ========================================
+   FONT BESAR
+   ======================================== */
+
+@font-face {
+  font-family: "Sparkle";
+  src: url("/fonts/poti.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ========================================
+   FONT KECIL
+   ======================================== */
+
+@font-face {
+  font-family: "CuteFont";
+  src: url("/fonts/Baby Doll.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ========================================
+   GLOBAL
+   ======================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream: #fffaf4;
+  --cream-dark: #fff1e7;
+
+  --pink: #f39ab5;
+  --pink-dark: #d96f91;
+  --pink-soft: #ffdce7;
+
+  --text: #654954;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+
+  /*
+    Font kecil menjadi font default
+  */
+  font-family: "CuteFont", Arial, sans-serif;
+}
+
+
+/* ========================================
+   CUSTOM FONT CLASSES
+   ======================================== */
+
+.sparkle-font {
+  font-family: "Sparkle", cursive;
+}
+
+.cute-font {
+  font-family: "CuteFont", Arial, sans-serif;
+}
+
+
+/* ========================================
+   SELECTION
+   ======================================== */
+
+::selection {
+  background: #ffc5d6;
+  color: #653f4c;
+}
+
+
+/* ========================================
+   SCROLLBAR
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff4ed;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #efa2b9;
+  border-radius: 999px;
+}
+
+
+/* ========================================
+   BACKGROUND
+   ======================================== */
+
+.cute-background {
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(255, 190, 210, 0.35),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(255, 221, 180, 0.3),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 50% 90%,
+      rgba(255, 201, 220, 0.3),
+      transparent 25%
+    ),
+    var(--cream);
+}
+
+
+/* ========================================
+   GLASS CARD
+   ======================================== */
+
+.glass {
+  background: rgba(255, 255, 255, 0.58);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  box-shadow:
+    0 15px 40px rgba(211, 123, 151, 0.12);
+}
+
+
+/* ========================================
+   PINK GLOW
+   ======================================== */
+
+.pink-glow {
+  box-shadow:
+    0 0 30px rgba(243, 154, 181, 0.25),
+    0 15px 40px rgba(210, 110, 143, 0.12);
 }
